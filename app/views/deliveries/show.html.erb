@@ -1,0 +1,3 @@
+<% @from = @pickup_location.address + " " + @pickup_location.street + " " + @pickup_location.city %>
+<% @to = @dropoff_location.address + " " + @dropoff_location.street + " " + @dropoff_location.city %>
+<%= gmaps({ :direction => { :data => { :from => @from, :to => @to } }}) %> 

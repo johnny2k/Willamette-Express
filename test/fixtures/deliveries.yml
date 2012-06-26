@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  source: 1
+  destination: 1
+  pickup_time: 2012-06-19 08:59:49
+  distance: 9.99
+  temperature_sensitive: false
+  driver_id: 1
+
+two:
+  source: 1
+  destination: 1
+  pickup_time: 2012-06-19 08:59:49
+  distance: 9.99
+  temperature_sensitive: false
+  driver_id: 1

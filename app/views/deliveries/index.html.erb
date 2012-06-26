@@ -1,0 +1,12 @@
+<h2>Deliveries</h2>
+<table>
+	<tr>
+		<th>Delivery ID</th>
+	</tr>
+  <% @deliveries.each do |d| %>
+	<tr>
+		<td><%= d.id %></td>
+		<td><%= link_to "Show", delivery_path(d) %></td>
+	</tr>
+	<% end %>
+</table>

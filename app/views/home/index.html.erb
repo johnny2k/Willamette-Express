@@ -1,1 +1,8 @@
-Ass
+<div id="home_map">
+	<% if user_signed_in? %>
+			<%= gmaps4rails(@json) %>
+	<%else %>
+		<% @markers = '[{ "lng": "-122.97", "lat": "44.9" }]' %>
+		<%= gmaps(:markers => { :data => @markers, :options => {:draggable => true }} ) %>
+	<% end %>
+</div>

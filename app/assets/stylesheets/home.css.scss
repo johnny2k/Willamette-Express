@@ -1,3 +1,26 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#home_map { 
+	position: relative;
+
+	left: 20%;
+	top: 30px;
+	
+}
+#create_location {
+	color: white;
+	width: 300px;
+	height: 400px;
+	position: relative;
+	top: 30px;
+	left: 90px;
+}
+
+#create_delivery {
+	position: relative;
+	width: 800px;
+	left: 400px;
+	top: -250px;
+}

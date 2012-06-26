@@ -1,0 +1,15 @@
+<table>
+	<% @locations.each do |location| %>
+	<tr>
+		<td>
+			<%= location.id %>
+		</td>
+		<td>
+			<%= "#{location.address} #{location.street}, #{location.city}" %>
+		</td>
+		<td>
+			<%= link_to "Show on map", locations_path(params[:location]) %>
+		</td>
+	</tr>
+	<% end %>
+</table>

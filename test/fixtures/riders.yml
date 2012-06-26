@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  location_id: 1
+  gas_mileage: 9.99
+  tank_size: 9.99
+  luggage_capacity: 9.99
+  user_id: 1
+
+two:
+  name: MyString
+  location_id: 1
+  gas_mileage: 9.99
+  tank_size: 9.99
+  luggage_capacity: 9.99
+  user_id: 1

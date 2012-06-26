@@ -7,10 +7,53 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-<%= yield %>
-<%= yield :scripts %>
+<body id="body">
+	
+	<div id="top">
+		<% if not user_signed_in? %>
+			<%= render :partial => 'devise/sessions/new' %>
+		<% else %>
+			<%= render :partial => 'devise/registrations/edit_location' %>
+			<div id="sign_out">
+				<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>  
+			</div>
+		<% end %>
+		<div id="some_text_at_the_top">
+			<h1>Willamette Express</h1>
+			<ul id="feature_list">
+				<%= image_tag('wheel.png')%><li class="inline">Pickup from restaurants that don't deliver</li>
+				<%= image_tag('wheel.png')%><li class="inline">Alcohol</li>
+				<%= image_tag('wheel.png')%><li class="inline">Smokes</li>
+				<%= image_tag('wheel.png')%><li class="inline">Important documents</li>
+				<%= image_tag('wheel.png')%><li class="inline">You!</li>
+			</ul>
+		</div>
+			<div id="logo">
+			<%= image_tag 'willamette-express.png' %>
+		</div>
+	</div>
+	</div>
+
+	<div id="middle">
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+
+		<div id="content">
+			<%= @content_for_layout %>
+			<%= yield %>
+			<%= yield :scripts %>
+		</div>
+	</div>
+
+	<div id="bottom">
+	<% if user_signed_in? %>
+		<div id="create_location">
+			<%= render :partial => "locations/form" %>
+    </div>
+		<div id="create_delivery">
+			<%= render :partial => "deliveries/form" %>
+		</div>
+	<% end %>
+	</div>
 </body>
 </html>
