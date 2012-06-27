@@ -1,8 +1,34 @@
+<div id="place_search">
+	<h3>Locate a place</h3>
+	<%= render :partial => "locations/place_form" %>
+</div>
+
+<% if user_signed_in? %>
+<div id="create_location">
+	<h3>Savea a location <i>temporary feature</i></h3>
+	<%= render :partial => "locations/form" %>
+</div>
+<% end %>
+
 <div id="home_map">
 	<% if user_signed_in? %>
-			<%= gmaps4rails(@json) %>
+		<%= gmaps({ 
+								:markers => { :data => @json}
+				}) 
+		%>
 	<%else %>
 		<% @markers = '[{ "lng": "-122.97", "lat": "44.9" }]' %>
-		<%= gmaps(:markers => { :data => @markers, :options => {:draggable => true }} ) %>
+		<%= gmaps(  "map_options" => {"libraries" => ["places"] },  
+								:markers => { :data => @markers, :options => {:draggable => true }} ) %>
 	<% end %>
+</div>  <!-- Three end divs here to end divs from other files. Do not stupidly remove -->
+</div>  <!-- Three end divs here to end divs from other files. Do not stupidly remove -->
+</div>  <!-- Three end divs here to end divs from other files. Do not stupidly remove -->
+
+<% if user_signed_in? %>
+<div id="bottom">
+	<div id="create_delivery">
+		<%= render :partial => "deliveries/form" %>
+	</div>
+<% end %>
 </div>

@@ -1,3 +1,31 @@
 // Place all the styles related to the Delivery controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#create_delivery {
+	
+}
+
+#bottom {
+	height: 71px;
+	border-style: solid;
+	border-color: #ebe4ad;
+	margin: 30px 0px;
+}
+
+#left_side {
+	text-align: left;
+	width: 50%;
+	height: 71px;
+	position: relative;
+	float: left;
+	background-color: #B1483D; 
+}
+
+#right_side {
+	text-align: right;
+	width: 50%;
+	position: relative;
+	float: right;
+	background-color: #B1483D;
+}

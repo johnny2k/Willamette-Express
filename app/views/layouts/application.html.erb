@@ -13,47 +13,51 @@
 		<% if not user_signed_in? %>
 			<%= render :partial => 'devise/sessions/new' %>
 		<% else %>
-			<%= render :partial => 'devise/registrations/edit_location' %>
-			<div id="sign_out">
+			<div class="inline">
 				<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>  
 			</div>
+			<%= render :partial => 'devise/registrations/edit_location' %>
 		<% end %>
-		<div id="some_text_at_the_top">
-			<h1>Willamette Express</h1>
+			<div id="logo">
+				<%= image_tag 'willamette-express.png' %>
+			</div>	
+		
+			<div id="some_text_at_the_top">	
+				<b>Need to run an errand and don't have time? These are just some of the things we could deliver!</b>
 			<ul id="feature_list">
-				<%= image_tag('wheel.png')%><li class="inline">Pickup from restaurants that don't deliver</li>
+				<%= image_tag('wheel.png')%><li class="inline">Take-out from restaurants</li>
 				<%= image_tag('wheel.png')%><li class="inline">Alcohol</li>
+				<%= image_tag('wheel.png')%><li class="inline">Condoms</li>
+				<%= image_tag('wheel.png')%><li class="inline">Tacos</li>
 				<%= image_tag('wheel.png')%><li class="inline">Smokes</li>
 				<%= image_tag('wheel.png')%><li class="inline">Important documents</li>
+				<%= image_tag('wheel.png')%><li class="inline">Ammunition</li>
+				<%= image_tag('wheel.png')%><li class="inline">A reptile</li>
+				<%= image_tag('wheel.png')%><li class="inline">Carrots</li>
 				<%= image_tag('wheel.png')%><li class="inline">You!</li>
 			</ul>
 		</div>
-			<div id="logo">
-			<%= image_tag 'willamette-express.png' %>
+		
+		<div>
+			<p id="page_header">WILLAMETTE EXPRESS</p>
 		</div>
-	</div>
+		<div>
+			<p id="motto">"Your parcel is important.....unlike our employees!"</p>
+		</div>
+			
+
 	</div>
 
 	<div id="middle">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-
+		<div id="notice_and_alert">
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+		</div>
 		<div id="content">
 			<%= @content_for_layout %>
 			<%= yield %>
 			<%= yield :scripts %>
 		</div>
-	</div>
-
-	<div id="bottom">
-	<% if user_signed_in? %>
-		<div id="create_location">
-			<%= render :partial => "locations/form" %>
-    </div>
-		<div id="create_delivery">
-			<%= render :partial => "deliveries/form" %>
-		</div>
-	<% end %>
 	</div>
 </body>
 </html>

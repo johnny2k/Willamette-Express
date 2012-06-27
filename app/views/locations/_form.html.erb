@@ -1,41 +1,14 @@
-<%= form_for @location, :action => "create" do |f| %>
-	<% if @location.errors.any? %>
-		<div id="error_explanation">
-			<h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
-
-			<ul>
-			<% @location.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
-			</ul>
-		</div>
-	<% end %>
-
+<%= form_for @location do |f| %>
 	<div class="field">
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	<div>
-
-	<div class="field">
-		<%= f.label :address%><br />
-		<%= f.text_field :address %>
+		<%= f.text_field :name, :placeholder => "Name of location" %>
 	</div>
 
 	<div class="field">
-		<%= f.label :street %><br />
-		<%= f.text_field :street %>
-	</div>
-
-	<div class="field">
-		<%= f.label :city %><br />
-		<%= f.text_field :city %>
+		<%= f.text_field :address, :placeholder => "Address" %>
 	</div>
 
 	<div class="actions">
-		<%= f.submit "Save location" %>
+		<%= f.submit "Save" %>
 	</div>
 
-	<div class="actions">
-		<%= f.submit "Show on map" %>
-	</div>
 <% end %>

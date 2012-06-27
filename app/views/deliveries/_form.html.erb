@@ -10,32 +10,23 @@
 		</div>
 	<% end %>
 
-	<% if user_signed_in? %>
-		<h3>Choose the source and destination of your pacakge using your saved locations.</h3>
-	<div class="field">
-		<%= f.label :source %>
-		<%= f.collection_select(:source, @locations, :id, :name) %>
-		<%= f.label :destination %>
-		<%= f.collection_select(:destination, @locations, :id, :name) %>
-	</div>
-	<h3>Specify times if they need to be </h3>
+<% if user_signed_in? %>
+	<div id="left_side">
+	<%= f.collection_select(:source, @locations, :id, :name) %>
 		<%= f.label :pickup_time %>
 		<%= select_date %>
 		<%= f.time_select :pickup_time %>
 	<% end %>
+  </div>
 
-	<div class="field">
+	<div id="right_side">
+		<%= f.collection_select(:destination, @locations, :id, :name) %>
 		<%= f.label :deadline %>
 		<%= select_date %>
 		<%= f.time_select :dead_line %><br />
-
 	<b>Is the package sensitive to temperatures?(<i>Does it require refrigeration</i>)</b>
-	<div class="field">
 		<%= f.label :temperature_sensitive %>
 		<%= f.check_box :temperature_sensitive %>
-	</div><br />
-
-	<div class="actions">
 		<%= f.submit %>
 	</div>
 <% end %>	

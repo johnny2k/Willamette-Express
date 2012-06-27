@@ -1,27 +1,21 @@
-<h2>Sign up</h2>
+<div class="left_side">
+	<h2>Create an account to continue</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+	<% devise_error_messages! %>
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	<table id="account_creation_form">
+		<li class="nostyle"><%= f.email_field :email, :placeholder => "Email" %></li>
+		<li class="nostyle"><%= f.password_field :password, :placeholder => "Password"%></li>
+		<li class="nostyle"><%= f.password_field :password_confirmation, :placeholder => "Password confirmation" %></li>
+		<li class="nostyle"><%= f.text_field :address, :placeholder => "Primary address for deliveries" %></li>
+		<li class="nostyle"><%= f.submit "Sign up" %></li>
+	</table>
+	<% end %>
+</div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+<div class="right_side">
+	<p id="address_info">With Willamette Express you can easily create a delivery request by using your saved locations. We request an address on this form so we know what area you live/work in. It doesn't have to be exact if you don't feel comfortable sharing the information but at delivery time we do need to know exactly where to go. The address on the form to the left can be from the main page by using the form at the top. It will automatically recenter the map so show you're location. GPS enabled phone users will also be able to choose if their location is determined from their phone,</p>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-		<%= f.password_field :password_confirmation %></div>
-	
-	<div><%= f.label :address %> <i>(the primary address where we will pick up your package)</i><br />
-		<%= f.text_field :address %></div>
-
-	<div><%= f.label :street %><br />
-		<%= f.text_field :street %></div>
-
-	<div><%= f.label :city%><br />
-		<%= f.text_field :city%></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+	 <p id="frequent_deliveries">For deliveries that are going to reoccur you can access your list of deliveries and select the frequency and times. Do you want a sandwich delivered from your favorite Italian restaurant everyday? No problem. 
+	</p>
+</div>

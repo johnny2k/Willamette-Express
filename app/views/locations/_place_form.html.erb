@@ -1,0 +1,19 @@
+<%= form_tag( :controller => "locations", :action => "locate") do %>
+	<div class="field">
+		<%= text_field_tag :keyword, nil, :placeholder => "What are you looking for?" %>
+	</div>
+
+	<div class="field">
+		<% if user_signed_in? %>
+			<%= text_field_tag :address, "#{@user.city}", :placeholder => "Where is it?" %>
+		<% else %>
+			<%= text_field_tag :address, nil, :placeholder => "Where is it?" %>
+		<% end %>
+
+	</div>
+
+	<div class="actions">
+		<%= submit_tag "Search" %>
+	</div>
+
+<% end %>

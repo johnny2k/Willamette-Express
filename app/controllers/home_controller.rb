@@ -1,5 +1,10 @@
 class HomeController < ApplicationController
   def index
-	 	@json = User.all.to_gmaps4rails
+		if user_signed_in?
+			@user = User.find(current_user)
+			@json = @user.to_gmaps4rails
+		else 
+			@json = nil
+		end
 	end
 end

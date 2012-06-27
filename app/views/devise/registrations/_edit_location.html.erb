@@ -1,22 +1,16 @@
-<ul class="top_left_form">
-	<li>
-		<b>Update your location</b>
+<ul id="change_location_form">
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
-
-	<li>
+	<li class="inline">
 		<%= f.text_field :address, :placeholder => "Address"%>
 	</li>
-
-	<li>
+	<li class="inline">
 		<%= f.text_field :city, :placeholder => "City" %>
 	</li>
-
-	<li>
+	<li class="inline">
 	<%= f.text_field :state, :placeholder => "State" %>
 	</li>
-
-	<li>
+	<li class="inline">
 		<%= f.submit "Update location" %>
 	</li>
 <% end %>

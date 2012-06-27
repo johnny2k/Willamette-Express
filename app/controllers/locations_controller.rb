@@ -53,4 +53,13 @@ class LocationsController < ApplicationController
 
   def edit
   end
+
+	def locate
+		if user_signed_in?
+			@user = User.find(current_user)
+		else
+			@user = nil
+		end
+		@json = Gmaps4rails.places_for_address(params[:address], 'AIzaSyDEynnQE3eZNbF-v6zJm3hXNCoPv5ZfmlE', params[:keyword])
+	end
 end

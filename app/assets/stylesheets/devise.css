@@ -1,0 +1,27 @@
+#change_location_form {
+	position: relative;
+	width: 851px;
+	left: 20px;
+	top: 15px;
+	margin: 0px;
+}
+
+#account_creation_form {
+	position: relative;
+	margin: 0 0 0 250px;
+	top: -90px;
+	width: 400px;
+}
+
+#address_info {
+	text-align: center;
+	margin: 0 130px;
+	position: relative;
+	left: -200px;
+}
+
+#frequent_deliveries {
+	position: relative;
+	left: -200px;
+
+}

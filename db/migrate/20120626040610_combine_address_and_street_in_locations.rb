@@ -1,9 +1,9 @@
 class CombineAddressAndStreetInLocations < ActiveRecord::Migration
   def up
-		remove_column :users, :street
+		remove_column :locations, :street
   end
 
   def down
-		add_column :users, :street
+		add_column :locations, :street
   end
 end

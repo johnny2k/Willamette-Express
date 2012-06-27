@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621053856) do
+ActiveRecord::Schema.define(:version => 20120626040610) do
 
   create_table "deliveries", :force => true do |t|
     t.integer  "source"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20120621053856) do
 
   create_table "locations", :force => true do |t|
     t.string   "address"
-    t.string   "street"
     t.string   "city"
     t.string   "state"
     t.string   "country"
@@ -69,8 +68,8 @@ ActiveRecord::Schema.define(:version => 20120621053856) do
     t.float    "longitude"
     t.boolean  "gmaps"
     t.string   "address"
-    t.string   "street"
     t.string   "city"
+    t.string   "state"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

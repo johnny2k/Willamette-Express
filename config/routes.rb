@@ -9,6 +9,7 @@ WillametteExpress::Application.routes.draw do
   get "locations/update"
   get "locations/show"
   get "locations/edit"
+	match "locations/locate" => "locations#locate"
   
 	get "deliveries/index" => "deliveries#index"
 	get "deliveries/deliver"
@@ -22,6 +23,7 @@ WillametteExpress::Application.routes.draw do
 	get "home/index"
 	root :to => "home#index"
 
+	match ":controller/:action"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
